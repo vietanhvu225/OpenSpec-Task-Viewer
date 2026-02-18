@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenSpec Dashboard</title>
+  <meta name="description" content="OpenSpec project progress dashboard — Kanban, Timeline, Analytics">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <div class="logo">
+          <span class="logo-icon">◆</span>
+          <span class="logo-text">OpenSpec</span>
+        </div>
+        <span class="header-divider"></span>
+        <span class="project-name" id="projectName"></span>
+      </div>
+      <nav class="nav">
+        <button class="nav-btn active" data-view="overview">
+          <span class="nav-icon">📊</span>
+          <span class="nav-label">Overview</span>
+        </button>
+        <button class="nav-btn" data-view="kanban">
+          <span class="nav-icon">📋</span>
+          <span class="nav-label">Kanban</span>
+        </button>
+        <button class="nav-btn" data-view="timeline">
+          <span class="nav-icon">📅</span>
+          <span class="nav-label">Timeline</span>
+        </button>
+      </nav>
+      <div class="header-right">
+        <span class="live-badge" id="liveBadge">
+          <span class="live-dot"></span>
+          Live
+        </span>
+        <span class="last-update" id="lastUpdate"></span>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div id="viewContainer"></div>
+    </main>
+
+    <!-- Detail Panel (slide-in) -->
+    <div class="detail-overlay" id="detailOverlay"></div>
+    <aside class="detail-panel" id="detailPanel">
+      <div class="detail-header">
+        <h2 class="detail-title" id="detailTitle"></h2>
+        <button class="detail-close" id="detailClose">✕</button>
+      </div>
+      <div class="detail-content" id="detailContent"></div>
+    </aside>
+  </div>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
